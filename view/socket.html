@@ -8,20 +8,13 @@
       var socket = io.connect();
 
       socket.on('date', function(data) {
-        $('#date').text(data.date);
+        $('#date').append(data.date+"<br/>");
       });
 
-      $(document).ready(function(){
-        $('#text').keypress(function(e){
-          socket.emit('client_data', {
-            'letter': String.fromCharCode(e.charCode)
-          });
-        });
-      });
+     
 
     </script>
     <div id="date"></div>
-    <textarea id="text"></textarea>
 
   </body>
 </html>
